@@ -1,9 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-
 import WeaponForm from './components/WeaponForm';
 import WeaponWrapper from './components/WeaponWrapper';
-import WeaponItem from './components/WeaponItem';
 
 
 
