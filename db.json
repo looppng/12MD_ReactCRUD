@@ -1,0 +1,52 @@
+{
+  "weapons": [
+    {
+      "name": "AK-47",
+      "id": 1,
+      "description": "The AK-47, or CV-47 as it was previously known before Global Offensive, is a rifle featured in the Counter-Strike series, exclusively available to the Terrorists. The counterpart for the Counter-Terrorists is the Maverick M4A1 Carbine before Global Offensive and the M4A4 / M4A1-S in Global Offensive.",
+      "price": 2700,
+      "createdAt": "2022-11-21T09:22:44.512Z",
+      "image": "./src/assets/images/ak47.png"
+    },
+    {
+      "name": "AUG",
+      "id": 2,
+      "description": "The AUG, or Bullpup, as it was previously known, is a rifle featured in the Counter-Strike series, exclusive to the Counter-Terrorists. The counterpart for the Terrorists is the Krieg 552 (before Global Offensive) and SG 553 in Global Offensive.",
+      "price": 3300,
+      "createdAt": "2023-11-21T09:22:44.512Z",
+      "image": "./src/assets/images/aug.png"
+    },
+    {
+      "name": "AWP",
+      "id": 3,
+      "description": "Considered a \"high risk, high reward\" weapon due to its high powers but slow firing rate, reload speed, and movement speed, the AWP is one of the most used weapons in the Counter-Strike series.",
+      "price": 4750,
+      "createdAt": "2023-11-23T13:38:12.297Z",
+      "image": "./src/assets/images/awp.png"
+    },
+    {
+      "name": "SG553",
+      "id": 4,
+      "description": "Considered a \"high risk, high reward\" weapon due to its high powers but slow firing rate, reload speed, and movement speed, the AWP is one of the most used weapons in the Counter-Strike series.",
+      "price": 4750,
+      "createdAt": "2023-11-23T13:38:12.297Z",
+      "image": "./src/assets/images/sg553.png"
+    },
+    {
+      "name": "GLOCK",
+      "id": 5,
+      "description": "Considered a \"high risk, high reward\" weapon due to its high powers but slow firing rate, reload speed, and movement speed, the AWP is one of the most used weapons in the Counter-Strike series.",
+      "price": 4750,
+      "createdAt": "2023-11-23T13:38:12.297Z",
+      "image": "./src/assets/images/glock.png"
+    },
+    {
+      "name": "DEAGLE",
+      "id": 6,
+      "description": "Considered a \"high risk, high reward\" weapon due to its high powers but slow firing rate, reload speed, and movement speed, the AWP is one of the most used weapons in the Counter-Strike series.",
+      "price": 4750,
+      "createdAt": "2023-11-23T13:38:12.297Z",
+      "image": "./src/assets/images/deagle.png"
+    }
+  ]
+}
