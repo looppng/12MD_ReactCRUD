@@ -1,39 +1,17 @@
 import WeaponItem from "./WeaponItem";
-import React, { useState, useEffect } from 'react';
+import useFetch from "./useFetch";
 
-type Weapon = {
-    id: number;
-    name: string;
-    description: string;
-    price: number;
-    image: string;
-    createdAt: string;
-  };
 
 const WeaponWrapper = () => {
 
-    const [data, setData] = useState<Weapon[]>([]);
-
-    useEffect(() => {
-      fetch('http://localhost:3004/weapons')
-        .then(res => {
-          return res.json();
-        })
-        .then(data => {
-          console.log(data);
-          setData(data);
-        });
-    }, []);
-
-    const handleDelete = (id: number) => {
-        const newWeapons = data.filter(data => data.id !== id);
-        setData(newWeapons);
-    };
+  const {data, isLoading, error} = useFetch('http://localhost:3004/weapons');
 
     return ( 
         <div className="weapon-wrapper">
-        {data.map((weapon) => (
-            <WeaponItem key={weapon.id} weapon={weapon} handleDelete={handleDelete}/>
+        { error && <div className="error-msg">{error}</div>}
+        { isLoading && <div className="error-msg">Loading...</div>}
+        { data.map((weapon) => (
+            <WeaponItem key={weapon.id} weapon={weapon}/>
         ))}
         </div>
      );

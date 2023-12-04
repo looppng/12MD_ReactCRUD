@@ -1,4 +1,5 @@
- import React from 'react';
+ import React  from 'react';
+ import { useHistory } from 'react-router-dom';
 
 type WeaponItemProps = {
   weapon: {
@@ -8,27 +9,38 @@ type WeaponItemProps = {
     price: number;
     image: string;
   };
-  handleDelete: (weaponId: number) => void;
 };
 
-const WeaponItem: React.FC<WeaponItemProps> = ({ weapon, handleDelete }) => 
-(
-  <div key={weapon.id} className="weapon-box">
-    <div className="img-box">
-      <img src={weapon.image} alt={weapon.name} />
+const WeaponItem: React.FC<WeaponItemProps> = ({ weapon }) => {
+
+  const history = useHistory();
+
+  const handleClick = () => {
+    fetch('http://localhost:3004/weapons/' + weapon.id, {
+      method: 'DELETE',
+    }).then(() => {
+      history.push('/')
+    })
+  };
+
+  return (
+    <div key={weapon.id} className="weapon-box">
+      <div className="img-box">
+        <img src={weapon.image} alt={weapon.name} />
+      </div>
+      <h1>{weapon.name}</h1>
+      <p>{weapon.description}</p>
+      <p>Weapon Price: ${weapon.price}</p>
+      <div className="button-wrapper">
+        <button className="weapon-edit edit__button button">
+          Edit
+        </button>
+        <button onClick={handleClick} className="weapon-delete button">
+          Delete
+        </button>
+      </div>
     </div>
-    <h1>{weapon.name}</h1>
-    <p>{weapon.description}</p>
-    <p>Weapon Price: ${weapon.price}</p>
-    <div className="button-wrapper">
-      <button className="weapon-edit edit__button button" data-weapon-id={weapon.id}>
-        Edit
-      </button>
-      <button onClick={() => handleDelete(weapon.id)} className="weapon-delete button" data-weapon-id={weapon.id}>
-        Delete
-      </button>
-    </div>
-  </div>
-);
+  );
+}
 
 export default WeaponItem;

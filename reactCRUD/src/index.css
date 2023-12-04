@@ -101,3 +101,7 @@ body {
   flex-wrap: wrap;
   padding: 1rem;
 }
+
+.error-msg {
+  color: white !important;
+}
