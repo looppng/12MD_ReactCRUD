@@ -10,12 +10,13 @@ const App: React.FC = () => {
   return (
     <Router>
       <div className='App'>
-      <Navbar/>
         <Switch>
           <Route exact path='/'>
+            <Navbar/>
             <WeaponWrapper/>
           </Route>
           <Route path='/createWeapon'>
+            <Navbar/>
             <WeaponForm/>
             <WeaponWrapper/>
           </Route>

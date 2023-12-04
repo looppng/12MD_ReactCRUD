@@ -5,6 +5,7 @@ type Weapon = {
   name: string;
   description: string;
   price: number;
+  createdAt: string;
 };
 
 const WeaponForm: React.FC = () => {
@@ -17,7 +18,7 @@ const WeaponForm: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const weapon: Weapon = { name, description, price };
+    const weapon: Weapon = { name, description, price, createdAt: new Date().toISOString()};
 
     setIsLoading(true);
 
@@ -32,6 +33,7 @@ const WeaponForm: React.FC = () => {
 
     history.push('/')
   };
+  
 
   return (
     <form onSubmit={handleSubmit} className="weapon-form">

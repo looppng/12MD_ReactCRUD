@@ -4,8 +4,8 @@ const Navbar = () => {
     return (
         <nav className="navbar">
             <div className="links">
-                <Link to="/">Home</Link>
-                <Link to="/createWeapon">Add new weapon</Link>
+                <Link to="/" className='nav-link'>Home</Link>
+                <Link to="/createWeapon" className='nav-link'>Add new weapon</Link>
             </div>
         </nav>
     )
