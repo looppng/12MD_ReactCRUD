@@ -1,12 +1,10 @@
 {
   "weapons": [
     {
-      "name": "AK-47",
-      "id": 1,
+        "name": "AK-47",
       "description": "Considered a \"high risk, high reward\" weapon due to its high powers but slow firing rate, reload speed, and movement speed, the AWP is one of the most used weapons in the Counter-Strike series.",
-      "price": 3300,
-      "createdAt": "2023-11-21T09:22:44.512Z",
-      "image": "./src/assets/images/ak47.png"
+      "price": "3301",
+      "id": 1
     },
     {
       "name": "AUG",

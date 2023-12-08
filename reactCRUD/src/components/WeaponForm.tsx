@@ -5,7 +5,6 @@ type Weapon = {
   name: string;
   description: string;
   price: number;
-  createdAt: string;
 };
 
 const WeaponForm: React.FC = () => {
@@ -18,11 +17,11 @@ const WeaponForm: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const weapon: Weapon = { name, description, price, createdAt: new Date().toISOString()};
+    const weapon: Weapon = { name, description, price };
 
     setIsLoading(true);
 
-    fetch('http://localhost:3004/weapons', {
+    fetch('http://localhost:3001/weapons/create', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(weapon)

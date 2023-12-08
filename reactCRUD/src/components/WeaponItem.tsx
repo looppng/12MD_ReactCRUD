@@ -43,8 +43,10 @@ const WeaponItem: React.FC<WeaponItemProps> = ({ weapon }) => {
     price: weapon.price,
   });
 
+
+
   const handleDelete = () => {
-    fetch('http://localhost:3004/weapons/' + weapon.id, {
+    fetch('http://localhost:3001/weapons/' + weapon.id, {
       method: 'DELETE',
     }).then(() => {
       history.push('/')
@@ -64,8 +66,8 @@ const WeaponItem: React.FC<WeaponItemProps> = ({ weapon }) => {
   };
 
   const handleUpdate = () => {
-    fetch('http://localhost:3004/weapons/' + weapon.id, {
-      method: 'PUT',
+    fetch('http://localhost:3001/weapons/edit/' + weapon.id, {
+      method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },

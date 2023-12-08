@@ -81,11 +81,11 @@ body {
   border-radius: 8px;
   overflow: hidden;
   transition: transform 0.3s ease-in-out;
-
-  &.img-box:hover {
-    transform: scale(1.1);
-  }
 }
+
+img-box:hover {
+   transform: scale(1.1);
+ }
 
 .weapon__created {
   font-size: 16px;

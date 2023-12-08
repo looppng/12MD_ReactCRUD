@@ -4,7 +4,7 @@ import useFetch from "./useFetch";
 
 const WeaponWrapper = () => {
 
-  const {data, isLoading, error} = useFetch('http://localhost:3004/weapons');
+  const {data, isLoading, error} = useFetch('http://localhost:3001/weapons');
 
     return ( 
         <div className="weapon-wrapper">
