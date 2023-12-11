@@ -1,23 +1,28 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-
-type Weapon = {
-  name: string;
-  description: string;
-  price: number;
-};
+import { useWeaponsContext } from "./WeaponsContext";
+import { Weapon } from './WeaponTypes'
 
 const WeaponForm: React.FC = () => {
 
-  const [name, setName] = useState('');
-  const [description, setDescription] = useState('');
-  const [price, setPrice] = useState<number>(0);
-  const [isLoading, setIsLoading] = useState(false);
-  const history = useHistory();
+    const { setWeapons } = useWeaponsContext();
 
-  const handleSubmit = (e: React.FormEvent) => {
+    const [name, setName] = useState('');
+    const [description, setDescription] = useState('');
+    const [price, setPrice] = useState<number>(0);
+    const [isLoading, setIsLoading] = useState(false);
+
+    const history = useHistory();
+
+
+    const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const weapon: Weapon = { name, description, price };
+        const weapon: Weapon = {
+            id: 0,
+            name,
+            description,
+            price,
+        };
 
     setIsLoading(true);
 
@@ -28,10 +33,15 @@ const WeaponForm: React.FC = () => {
     }).then(() => {
         console.log("new weapon added");
         setIsLoading(false);
+        setWeapons((prevWeapons) => [...prevWeapons, weapon]);
     })
+        .catch((error) => {
+            console.error('Error adding weapon:', error);
+            setIsLoading(false);
+        });
 
     history.push('/')
-  };
+    };
   
 
   return (

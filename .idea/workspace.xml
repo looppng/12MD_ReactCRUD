@@ -2,15 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="38ed9ee0-e161-4a38-89e7-80d713258713" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/db.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jsLinters/eslint.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactCRUD/src/components/WeaponTypes.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactCRUD/src/components/WeaponsContext.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactCRUD/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/reactCRUD/src/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reactCRUD/src/components/WeaponForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/reactCRUD/src/components/WeaponForm.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reactCRUD/src/components/WeaponItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/reactCRUD/src/components/WeaponItem.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reactCRUD/src/components/WeaponWrapper.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/reactCRUD/src/components/WeaponWrapper.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reactCRUD/src/components/useFetch.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/reactCRUD/src/components/useFetch.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactCRUD/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/reactCRUD/src/index.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,15 +40,21 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="js.linters.configure.manually.selectedeslint" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.path.for.package.standard" value="project" />
+    <property name="node.js.selected.package.eslint" value="C:\Users\egils\Documents\GitHub\12MD_ReactCRUD\reactCRUD\node_modules\eslint" />
+    <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
+    <property name="settings.editor.selected.configurable" value="settings.javascript.linters.eslint" />
     <property name="ts.external.directory.path" value="C:\Users\egils\Documents\GitHub\12MD_ReactCRUD\reactCRUD\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -59,7 +68,7 @@
       <updated>1701788035581</updated>
       <workItem from="1701788036691" duration="84000" />
       <workItem from="1702039513825" duration="576000" />
-      <workItem from="1702056485919" duration="7437000" />
+      <workItem from="1702056485919" duration="18210000" />
     </task>
     <servers />
   </component>
@@ -76,5 +85,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

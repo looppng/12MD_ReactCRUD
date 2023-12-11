@@ -1,56 +1,29 @@
- import React, { useState}  from 'react';
- import { useHistory } from 'react-router-dom';
+import { useState }  from 'react';
+import { useWeaponsContext } from "./WeaponsContext";
+import { Weapon } from './WeaponTypes';
 
 type WeaponItemProps = {
-  weapon: {
-    id: number;
-    name: string;
-    description: string;
-    price: number;
-    createdAt: string;
-    image: string;
-  };
+  weapon: Weapon;
 };
 
-const timeAgo = (timestamp: string): string => {
-  const now = new Date();
-  const createdDate = new Date(timestamp);
+const WeaponItem: React.FC<WeaponItemProps> = ({ weapon}) => {
 
-  const timeDifference = now.getTime() - createdDate.getTime();
-  const seconds = Math.floor(timeDifference / 1000);
-  const minutes = Math.floor(seconds / 60);
-  const hours = Math.floor(minutes / 60);
-
-  if (hours >= 24) {
-      return `${createdDate.toLocaleString()}`; 
-  } else if (hours >= 1) {
-      return `${hours} hour${hours > 1 ? 's' : ''} ago`;
-  } else if (minutes >= 1) {
-      return `${minutes} minute${minutes > 1 ? 's' : ''} ago`;
-  } else {
-      return 'a few seconds ago';
-  }
-};
-
-const WeaponItem: React.FC<WeaponItemProps> = ({ weapon }) => {
-
-  const history = useHistory();
+  const { setWeapons } = useWeaponsContext();
 
   const [isEditing, setIsEditing] = useState(false);
-  const [editedWeapon, setEditedWeapon] = useState({
-    name: weapon.name,
-    description: weapon.description,
-    price: weapon.price,
+  const [editedWeapon, setEditedWeapon] = useState<Weapon>({
+    ...weapon,
   });
-
-
 
   const handleDelete = () => {
     fetch('http://localhost:3001/weapons/' + weapon.id, {
       method: 'DELETE',
-    }).then(() => {
-      history.push('/')
     })
+        .then(response => response.json())
+        .then(() => {
+          setWeapons((prevWeapons) => prevWeapons.filter((w) => w.id !== weapon.id));
+        })
+        .catch((error) => console.error('Error deleting weapon:', error));
   };
 
   const handleToggleEdit = () => {
@@ -72,21 +45,22 @@ const WeaponItem: React.FC<WeaponItemProps> = ({ weapon }) => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(editedWeapon),
-    }).then(() => {
-      setIsEditing(false);
-    });
+    })
+        .then(() => fetch('http://localhost:3001/weapons'))
+        .then((response) => response.json())
+        .then((updatedWeapons) => {
+          setWeapons(updatedWeapons);
+          setIsEditing(false);
+        })
+        .catch((error) => console.error('Error updating weapon:', error));
   };
+
 
   return (
     <div key={weapon.id} className="weapon-box">
-      <div className="img-box">
-        <img src={weapon.image} alt={weapon.name} />
-      </div>
       <h1>{isEditing ? <input type="text" name="name" value={editedWeapon.name} onChange={handleInputChange} /> : weapon.name}</h1>
       <p>{isEditing ? <textarea name="description" value={editedWeapon.description} onChange={handleInputChange} /> : weapon.description}</p>
       <p>{isEditing ? <input type="number" name="price" value={editedWeapon.price} onChange={handleInputChange} /> : `Weapon Price: $${weapon.price}`}</p>
-      <p>Created At: {timeAgo(weapon.createdAt)}</p>
-      <div className="button-wrapper"></div>
       <div className="button-wrapper">
         {isEditing ? (
           <button onClick={handleUpdate} className="save__button button">

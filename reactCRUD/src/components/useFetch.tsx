@@ -1,13 +1,5 @@
 import { useState , useEffect } from 'react';
-
-type Weapon = {
-    id: number;
-    name: string;
-    description: string;
-    price: number;
-    image: string;
-    createdAt: string;
-  };
+import { Weapon } from './WeaponTypes';
 
 const useFetch = (url: string) => {
 
